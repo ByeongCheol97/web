@@ -1,0 +1,71 @@
+<1>
+<script>alert('Process-0')</script>
+</head>
+<body>
+    <h1>Process-1</h1>
+    <script>alert('Process-2')</script>
+    <h1>Process-2</h1>
+    <script>alert('Process-3')</script>
+</body>
+
+==============================================
+<2>
+ <script>document.querySelector('h1').style.backgroundColor='red'
+        document.querySelector('h2').style.color='red'
+    </script>
+</head>
+<body>
+    <h1>Process-1</h1>
+    
+    <h2>Process-2</h2>
+   
+</body>
+=================================================
+<3>
+ <script>
+        window.onload = function () {
+            // 문서 객체를 선택합니다.
+            const headers = document.querySelectorAll('h1');
+            for (let i = 0; i < headers.length; i++) {
+                // 변수를 선언합니다.
+                const header = headers[i];
+                // 문서 객체를 조작합니다.
+                header.style.color = 'orange';
+                header.style.background = 'red';
+                header.innerHTML = 'From JavaScript';
+            }
+        };
+    </script>
+</head>
+<body>
+    <h1>Header</h1>
+    <h1>Header</h1>
+    <h1>Header</h1>
+</body>
+
+
+==============================
+<4>
+<body>
+    <div>
+        <h1>선호하는 음식</h1>
+        <div id="food_1">
+            <h2 id="title">한식</h2>
+            <ol>
+                <li id="kimchi">
+                    <a href="#">김치</a>
+                </li>
+                <li>불고기</li>
+                <li>비빔밥</li>
+            </ol>
+        </div>
+        <div id="food_2">
+            <h2>양식</h2>
+            <ol id="list">
+                <li>돈까스</li>
+                <li  id="pizza">피자</li>
+                <li>파스타</li>
+            </ol>
+        </div>
+    </div>
+</body>
